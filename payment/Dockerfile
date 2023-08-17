@@ -8,7 +8,8 @@ ENTRYPOINT ["python"]
 CMD ["/lmsapp/emi-payment.py"]
 
 From ubuntu:20.04 as final-image
-COPY --from=base-image /lmsapp/emi-payment.py car-emi-payment.py ./
+COPY --from=base-image /lmsapp/emi-payment.py ./
+ADD car-emi-payment.py ./
 ENTRYPOINT ["python"]
 CMD ["/lmsapp/car-emi-payment.py"]
 EXPOSE 80
