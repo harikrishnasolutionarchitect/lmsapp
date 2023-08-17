@@ -1,14 +1,15 @@
 # This is the first image:
-FROM ubuntu:18.04 AS compile-image
+FROM ubuntu:20.04 AS compile-image
 RUN apt-get update
-RUN apt-get install -y --no-install-recommends gcc build-essential python
+RUN apt-get install -y python crul 
+RUN mkdir /lmsapp
 
-WORKDIR /usr/app/src/
+WORKDIR /lmsapp
 COPY hello.py ./
 
 # This is the second and final image; it copies the compiled
 # binary over but starts from the base ubuntu:18.04 image.
-FROM ubuntu:18.04 AS runtime-image
+FROM ubuntu:20.04 AS runtime-image
 
-COPY --from=compile-image /usr/app/src .
+COPY --from=compile-image /lmsapp .
 CMD [ "python", "./hello.py" ]
