@@ -27,4 +27,4 @@ jobs:
         with:
           context: payment/
           push: true
-          tags: dockerhub1233/lmsapp:v0.2.0
+          tags: dockerhub1233/lmsapp:v0.2.1
