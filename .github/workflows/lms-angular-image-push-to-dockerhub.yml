@@ -27,4 +27,4 @@ jobs:
         with:
           context: python-images/
           push: true
-          tags: dockerhub1233/lmsapp:v0.10
+          tags: dockerhub1233/lmsapp:v0.1.0
