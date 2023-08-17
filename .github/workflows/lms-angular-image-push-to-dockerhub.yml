@@ -1,9 +1,9 @@
-name:  lms app - image - build and push
+name:  lms app - payment
 
 on: push
 jobs:
   push_to_registry:
-    name: lms app - images push to repo
+    name: lms app - payment image push to repo
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
@@ -25,6 +25,6 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
-          context: python-images/
+          context: payment/
           push: true
-          tags: dockerhub1233/lmsapp:v0.1.1
+          tags: dockerhub1233/lmsapp:v0.2.0
