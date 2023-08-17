@@ -15,7 +15,7 @@ CMD ["/lmsapp/car-emi-payment.py"]
 EXPOSE 80
 
 From ubuntu:20.04 as final-2-image
-COPY --from=final-image /lmsapp ./
+COPY --from=final-image /lmsapp/car-emi-payment.py ./
 ADD car-emi-payment.py Total_emi_Adding_EMi_Amount.py ./
 ENTRYPOINT ["python"]
 CMD ["/lmsapp/Total_emi_Adding_EMi_Amount.py"]
