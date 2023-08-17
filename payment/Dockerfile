@@ -27,6 +27,12 @@ COPY --from=final-2-image ./ /usr/share/nginx/html
 ADD nginx.conf /etc/nginx/conf.d/lmsap-nginx.conf
 EXPOSE 80
 
+FROM mysql:latest AS mysql
+COPY --from=ngi ./ /var/lib/mysql
+ADD load_data.sql /lmsapp
+
+
+
 
 
 
