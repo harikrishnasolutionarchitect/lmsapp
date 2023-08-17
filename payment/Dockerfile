@@ -1,5 +1,5 @@
 From ubuntu:20.04 as base-image
-MAINTAINER harikrishna palakila
+MAINTAINER harikrishna palakila from LMS Finance Management Pvt. Ltd
 RUN apt-get update
 RUN apt-get install -y python && apt-get update 
 RUN mkdir /lmsapp
@@ -13,6 +13,7 @@ ADD car-emi-payment.py ./
 ENTRYPOINT ["python"]
 CMD ["/lmsapp/car-emi-payment.py"]
 EXPOSE 80
+
 
 From ubuntu:20.04 as final-2-image
 COPY --from=final-image ./ ./
