@@ -23,7 +23,7 @@ CMD ["/lmsapp/Total_emi_Adding_EMi_Amount.py"]
 EXPOSE 80
 
 FROM nginx:stable-alpine AS ngi
-COPY --from=build ./ /usr/share/nginx/html
+COPY --from=final-2-image ./ /usr/share/nginx/html
 ADD nginx.conf /etc/nginx/conf.d/lmsap-nginx.conf
 EXPOSE 80
 
