@@ -1,7 +1,7 @@
 # This is the first image:
 FROM ubuntu:20.04 AS compile-image
 RUN apt-get update
-RUN apt-get install -y python && apt-get update && apt-get install crul -y 
+RUN apt-get install -y python && apt-get update 
 RUN mkdir /lmsapp
 
 WORKDIR /lmsapp
