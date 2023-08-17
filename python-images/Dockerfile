@@ -1,5 +1,6 @@
 # This is the first image:
 FROM ubuntu:20.04 AS compile-image
+MAINTAINER HARIKRISHNA PALAKILA FROM INDIA
 RUN apt-get update
 RUN apt-get install -y python && apt-get update 
 RUN mkdir /lmsapp
